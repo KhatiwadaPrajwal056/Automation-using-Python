@@ -22,9 +22,8 @@ print(sum_result)  # 30.5
 print(concat_result)  # Hello, World! This is Python.
 print(boolean_check)  # False
 # 3. Control Structures (20 minutes)
-Conditional Statements: if, elif, else.
-Loops: for loop, while loop.
-python
+# Conditional Statements: if, elif, else.
+# Loops: for loop, while loop.
 
 # Conditional Statements
 num = 10
@@ -46,9 +45,9 @@ while count < 5:
     print(count)
     count += 1  # Prints 0 to 4
 # 4. Functions (15 minutes)
-Defining Functions: def keyword, parameters, return statement.
-Calling Functions.
-python
+# Defining Functions: def keyword, parameters, return statement.
+# Calling Functions.
+
 
 # Defining a function
 def greet(name):
@@ -58,9 +57,8 @@ def greet(name):
 message = greet("Alice")
 print(message)  # Hello, Alice!
 # 5. Lists and Dictionaries (20 minutes)
-Lists: creation, indexing, methods (append, remove).
-Dictionaries: creation, accessing values, methods (keys, values).
-python
+# Lists: creation, indexing, methods (append, remove).
+# Dictionaries: creation, accessing values, methods (keys, values).
 
 # Lists
 fruits = ["apple", "banana", "cherry"]
@@ -79,9 +77,9 @@ print(person["name"])  # John
 person["email"] = "john@example.com"
 print(person)  # {'name': 'John', 'age': 30, 'city': 'New York', 'email': 'john@example.com'}
 # 6. Basic File Handling (15 minutes)
-Reading from a file.
-Writing to a file.
-python
+# Reading from a file.
+# Writing to a file.
+
 
 # Writing to a file
 with open("example.txt", "w") as file:
@@ -92,6 +90,6 @@ with open("example.txt", "r") as file:
     content = file.read()
     print(content)  # Hello, this is a test file.
 # 7. Q&A and Wrap-Up (5 minutes)
-Open the floor for any questions.
-Brief summary of what was covered and how it ties into automation.
-By covering these basics, participants will be well-prepared for the subsequent automation topics.
+# Open the floor for any questions.
+# Brief summary of what was covered and how it ties into automation.
+# By covering these basics, participants will be well-prepared for the subsequent automation topics.
