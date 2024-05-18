@@ -1,6 +1,11 @@
 #  Install pyautogui
 #  pyautogui lets your Python scripts control the mouse and keyboard to automate interactions with other applications.
 
+# opencv
+# update -U pillow
+# opencv-python
+# opencv-python--user
+
 import pyautogui as gui
 from time import sleep
 # mouse operation: movements,clicks,scroll

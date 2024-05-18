@@ -88,3 +88,16 @@ if __name__ == "__main__":
     while True:
         whack_mole_mac()
         time.sleep(0.1)  # Small delay to prevent excessive CPU usage
+
+
+'''
+if __name__ == "__main__": Block:
+
+The if __name__ == "__main__": block is a common idiom in Python scripts.
+It checks whether the current script is being run as the main program or if it's being imported as a module into another script.
+If the script is being run as the main program (i.e., directly executed), the condition __name__ == "__main__" evaluates to True.
+In this case, the code inside the if block is executed. This typically includes the main functionality of the script, such as defining functions, performing operations, etc.
+If the script is being imported as a module into another script, the condition __name__ == "__main__" evaluates to False, and the code inside the if block is not executed.
+
+
+'''
