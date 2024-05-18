@@ -60,40 +60,68 @@ password_element.send_keys(password)
 login_element.click()
 
 
-items = driver.find_elements(By.CLASS_NAME,"inventory_item")
-#return type: list of WebElement Full name:
-# print("Iteams are:",items.text)
-for item in items:
-    each_item = item.find_element(By.CLASS_NAME,"inventory_item_name").text
-    # print(each_item)
-    if 'T_shirt' in each_item:
-        add_to_cart_button = item.find_element(By.CLASS_NAME, "btn_primary btn_inventory")
-        add_to_cart_button.click()
-        # botton.click()
-    # print((each_item))
-sleep(30)
+# items = driver.find_elements(By.CLASS_NAME,"inventory_item")
+# #return type: list of WebElement Full name:
+# # print("Iteams are:",items.text)
+# for item in items:
+#     each_item = item.find_element(By.CLASS_NAME,"inventory_item_name").text
+#     # print(each_item)
+#     if 'T_shirt' in each_item:
+#         add_to_cart_button = item.find_element(By.CLASS_NAME, "btn_primary btn_inventory")
+#         add_to_cart_button.click()
+#         # botton.click()
+#     # print((each_item))
+# sleep(30)
 
-# items = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+items = driver.find_elements(By.CLASS_NAME, 'inventory_item')
 # print("Items available are: ")
 
 
-# for item in items:
-#     item_name = item.find_element(By.CLASS_NAME, "inventory_item_name").text
-#     # print(item_name)
-#     if "T-Shirt" in item_name:
-#         # #inventory_container > div > div:nth-child(3) > div.pricebar > button
-#         # since nth-child(3) depends on the div we select, we don't want that
-#         # As we want to find the same "add to cart" button in every div despite the child number for the div list
-#         # we remove the nth-child(3) and use it
-#         add_to_cart_button = item.find_element(By.CSS_SELECTOR, "#inventory_container > div > div > div.pricebar > button")
-#         add_to_cart_button.click()
+for item in items:
+    item_name = item.find_element(By.CLASS_NAME, "inventory_item_name").text
+    # print(item_name)
+    if "T-Shirt" in item_name:
+        # #inventory_container > div > div:nth-child(3) > div.pricebar > button
+        # since nth-child(3) depends on the div we select, we don't want that
+        # As we want to find the same "add to cart" button in every div despite the child number for the div list
+        # we remove the nth-child(3) and use it
+        add_to_cart_button = item.find_element(By.CSS_SELECTOR, "#inventory_container > div > div > div.pricebar > button")
+        add_to_cart_button.click()
 
-# # Go to Cart
-# cart_button = driver.find_element(By.XPATH,'//*[@id="shopping_cart_container"]/a')
-# cart_button.click()
+# Go to Cart
+cart_button = driver.find_element(By.XPATH,'//*[@id="shopping_cart_container"]/a')
+cart_button.click()
+'''
+Different locator strategies (CLASS_NAME, CSS_SELECTOR, XPATH,TAG_NAME) are chosen based on what is most effective and readable for the specific element being targeted. This flexibility allows you to handle a wide variety of HTML structures and ensures that your Selenium script is both robust and maintainable. '''
 
-# sleep(30)
+checkout_button = driver.find_element(By.CSS_SELECTOR,'#cart_contents_container > div > div.cart_footer > a.btn_action.checkout_button')
+checkout_button.click()
+input_fields = driver.find_elements(By.TAG_NAME, "input")
+input_data = ["John", "Doe", "123124"]
+sleep(2)
+for input_field, input_data in zip(input_fields,input_data):
+    input_field.send_keys(input_data)
+    sleep(2)
 
+input_fields[-1].submit() # or find the continue element and click it
+sleep(1)
+
+# Finish Checkout
+# btn_action cart_button -> should be used as btn_action.cart_button
+
+
+# Define an explicit wait with a timeout of 10 seconds
+wait = WebDriverWait(driver, 10)
+
+# Locate the finish button element using a CSS selector
+finish_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "btn_action.cart_button")))
+
+sleep(1)
+# Click the finish button
+finish_button.click()
+sleep(30)
+
+#Excercise : Remove item that cost more than n dollars
 
 # for iteam in iteams:
 #     iteam_name = driver.find_element(By.CLASS_NAME,"inventory_item")
