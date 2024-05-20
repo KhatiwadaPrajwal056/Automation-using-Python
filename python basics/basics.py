@@ -200,10 +200,10 @@ import os
 #     content = file.read()
 #     print(content)
 
-with open("/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/python basics/binary.bin","wb") as file:
-    msg="Hello this is binary file"
-    # file.write(b.msg) # or
-    file.write(msg.encode())
+# with open("/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/python basics/binary.bin","wb") as file:
+#     msg="Hello this is binary file"
+#     # file.write(b.msg) # or
+#     file.write(msg.encode())
 
 
 
