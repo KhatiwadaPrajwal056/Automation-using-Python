@@ -191,7 +191,6 @@ my_dictionary = {
 # write(w): opnes file for writing. creats if doesnot exists.
 # binary read(rb): reads in binary format, file nust exist. decode
 # binary write(wb): opnes file for binary writing. creats if doesnot exists. encode
-import os
 # traditional wway
 # with open("example.txt","w") as file:
 #     file.write("hello there")
@@ -205,7 +204,9 @@ import os
 #     # file.write(b.msg) # or
 #     file.write(msg.encode())
 
-
+# import os
+# print(os.path.splitext("/Users/khatiwadaprajwal22icloud.com/Desktop/untitled folder/wallpaper.jpg"))
+# # print(ext)
 
 
 
