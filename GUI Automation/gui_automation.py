@@ -8,7 +8,7 @@ import pyautogui
 import time
 import os
 
-
+# size,position,click,moveTo
 
 # Change directory to the script's directory
 os.chdir(os.path.dirname(__file__))
@@ -47,7 +47,7 @@ def click_button_mac(image_path, button_name):
         button_location = pyautogui.locateCenterOnScreen(image_path, confidence=0.8)
         print(button_location)
         x = button_location.x / 2
-        y = button_location.y / 2
+        y = button_location.y / 2 
         pyautogui.click(x,y)
     except pyautogui.ImageNotFoundException:
         print(f"Error locating {button_name} button!")
@@ -88,8 +88,7 @@ if __name__ == "__main__":
     while True:
         whack_mole_mac()
         time.sleep(0.1)  # Small delay to prevent excessive CPU usage
-
-
+1
 '''
 if __name__ == "__main__": Block:
 

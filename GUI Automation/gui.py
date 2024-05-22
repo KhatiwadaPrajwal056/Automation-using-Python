@@ -8,6 +8,7 @@
 
 import pyautogui as gui
 from time import sleep
+import urllib
 # mouse operation: movements,clicks,scroll
 # Location on your screen is determined by (x,y) . It starts from top left corner (0,0) and bottom will be the your resoution.
 
