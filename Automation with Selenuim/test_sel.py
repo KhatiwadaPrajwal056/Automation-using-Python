@@ -17,37 +17,28 @@ from selenium.webdriver.support.ui import WebDriverWait  #optional
 from selenium.webdriver.support import expected_conditions as EC #optional
 from colorama import init, Fore, Style # for printing colored text
 # Colorama is a library that makes it easier to print colored text in the terminal. It is cross-platform, so it works on Windows, Linux, and Mac.
-import os
-from time import sleep
-
 
 # BASICS TO setup selenium
-service = Service(executable_path='/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/Automation with Selenuim/chromedriver')
-driver = webdriver.Chrome(service=service) # web driver ko instance diyo
-driver.get("https://www.saucedemo.com/v1/")
-# print("Title of the Website",driver.title)
-'''
-driver.get("https://google.com")
+import os
+from pathlib import Path
+os.chdir(os.path.dirname(__file__))
+# print(os.getcwd())
+wait_load = webdriver.ChromeOptions()
+wait_load.add_experimental_option("detach",True)
 
-WebDriverWait(driver,5).until(
+web_service = Service(executable_path='/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/Automation with Selenuim/chromedriver')
+
+driver = webdriver.Chrome(service=web_service,options=wait_load)
+driver.get("https://google.com")
+# sleep(10)
+
+WebDriverWait(driver,2).until(
     EC.presence_of_element_located((By.CLASS_NAME,"gLFyf"))
 )
 input_element = driver.find_element(By.CLASS_NAME,"gLFyf")
-# input_element.clear()  #to clear if anything is there
-
-# input_element.send_keys("python.org")
-input_element.send_keys("python.org" + Keys.ENTER) or
-input_element.click()
-
-WebDriverWait(driver,5).until(
-    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"python.org"))
-)
-link = driver.find_element(By.PARTIAL_LINK_TEXT,"python.org")
-link.click()
-# to make the element exists
-sleep(10)
+input_element.send_keys("python.org",Keys.ENTER)
 # driver.quit()
-'''
+
 
 
 username = "standard_user"
@@ -100,12 +91,12 @@ checkout_button = driver.find_element(By.CSS_SELECTOR,'#cart_contents_container 
 checkout_button.click()
 input_fields = driver.find_elements(By.TAG_NAME, "input")
 input_data = ["John", "Doe", "123124"]
-sleep(2)
+sleep(0.5)
 for input_field, input_data in zip(input_fields,input_data):
     input_field.send_keys(input_data)
     sleep(2)
 
-input_fields[-1].submit() # or find the continue element and click it
+input_fields[-1].click() # or find the continue element and click it
 sleep(1)
 
 # Finish Checkout
@@ -123,7 +114,7 @@ sleep(1)
 finish_button.click()
 sleep(30)
 
-#Excercise : Remove item that cost more than n dollars
+#Excercise : Remove item that cost more than n dollars:let n = $20
 
 # for iteam in iteams:
 #     iteam_name = driver.find_element(By.CLASS_NAME,"inventory_item")
