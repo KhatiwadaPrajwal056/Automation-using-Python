@@ -5,9 +5,10 @@ Testing is reffered to web applications
 Selenium have lot of tools each with its specific functions
 '''
 from selenium import webdriver 
-# Selenium WebDriver is a tool used for automating web application testing to verify that it performs expectedly. You can simulate user actions like clicking, typing, and navigating web pages.
+# Selenium WebDriver is a tool used for automating web application testing to verify that it performs expectedly. 
+# also to control our web browser
+# You can simulate user actions like clicking, typing, and navigating web pages.
 # https://googlechromelabs.github.io/chrome-for-testing/
-# already available function haru cha for web
 from selenium.webdriver.chrome.service import Service
 # The Service class is used to manage the starting and stopping of the WebDriver executable. This is useful when you need more control over the WebDriver service, such as setting custom paths or environment variables.
 from selenium.webdriver.common.by import By
