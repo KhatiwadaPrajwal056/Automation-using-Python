@@ -97,7 +97,7 @@ for input_field, input_data in zip(input_fields,input_data):
     input_field.send_keys(input_data)
     sleep(2)
 
-input_fields[-1].click() # or find the continue element and click it
+input_fields[-1].click() # or find the continue element i.e [-1] and click it
 sleep(1)
 
 # Finish Checkout
