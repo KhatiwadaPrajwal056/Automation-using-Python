@@ -117,6 +117,8 @@ sleep(30)
 
 #Excercise : Remove item that cost more than n dollars:let n = $20
 
+
+# for coloring texts
 # for iteam in iteams:
 #     iteam_name = driver.find_element(By.CLASS_NAME,"inventory_item")
 #     print()
