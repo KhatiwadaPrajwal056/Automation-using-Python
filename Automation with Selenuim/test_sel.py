@@ -16,7 +16,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys #Optional
 from selenium.webdriver.support.ui import WebDriverWait  #optional
 from selenium.webdriver.support import expected_conditions as EC #optional
-from colorama import init, Fore, Style # for printing colored text
+from colorama import Fore, Style # for printing colored text
 # Colorama is a library that makes it easier to print colored text in the terminal. It is cross-platform, so it works on Windows, Linux, and Mac.
 
 # BASICS TO setup selenium
