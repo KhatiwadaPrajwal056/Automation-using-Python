@@ -50,7 +50,8 @@ import urllib
 # gui.click(clicks=2,duration=1)
 
 # scroll the mouse: +ve scrolls up and -ve scrolls down
-# gui.scroll(200)
+sleep(2)
+gui.scroll(-20)
 
 
 #keyboard functions:
@@ -72,46 +73,46 @@ import urllib
 # gui.ImageNotFoundException
 import os
 
-os.chdir("/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/GUI Automation")
+# os.chdir("/Users/khatiwadaprajwal22icloud.com/Desktop/Visual studio code/Automation-using-Python/GUI Automation")
 
-moles = ["assets/mole1_mac.png","assets/mole2_mac.png"]
-START_BUTTON = "assets/start_button_mac.png"
-CONTINUE_BUTTON = "assets/continue_button.png"
+# moles = ["assets/mole1_mac.png","assets/mole2_mac.png"]
+# START_BUTTON = "assets/start_button_mac.png"
+# CONTINUE_BUTTON = "assets/continue_button.png"
  
-def click_button_mac(image_path, button_name):
-    """
-    Locate and click a button on the screen for Mac (Retina Display). Give permission to Vscode and the web-browser for screen recording from settings
+# def click_button_mac(image_path, button_name):
+#     """
+#     Locate and click a button on the screen for Mac (Retina Display). Give permission to Vscode and the web-browser for screen recording from settings
 
-    Parameters:
-        image_path (str): Path to the button image.
-        button_name (str): Name of the button for display purposes.
-    """
-    print(f"Locating {button_name} Button!")
-    try:
-        button_location = gui.locateCenterOnScreen(image_path, confidence=0.8)
-        print(button_location)
-        x = button_location.x / 2
-        y = button_location.y / 2
-        gui.click(x,y)
-    except gui.ImageNotFoundException:
-        print(f"Error locating {button_name} button!")
+#     Parameters:
+#         image_path (str): Path to the button image.
+#         button_name (str): Name of the button for display purposes.
+#     """
+#     print(f"Locating {button_name} Button!")
+#     try:
+#         button_location = gui.locateCenterOnScreen(image_path, confidence=0.8)
+#         print(button_location)
+#         x = button_location.x / 2
+#         y = button_location.y / 2
+#         gui.click(x,y)
+#     except gui.ImageNotFoundException:
+#         print(f"Error locating {button_name} button!")
 
-def hit_the_mole():
-    # this function will hit the mole if appears on the screen.
-    for mole in moles:
-        try:
-            x,y = gui.locateCenterOnScreen(mole,confidence=0.8)
-            # The optional confidence keyword argument specifies the accuracy with which the function should locate the image on screen. This is helpful in case the function is not able to locate an image due to negligible pixel differences:
-            gui.click(x/2,y/2)
-            print("Mole hit")
-        except gui.ImageNotFoundException:
-            print("No mole found")
+# def hit_the_mole():
+#     # this function will hit the mole if appears on the screen.
+#     for mole in moles:
+#         try:
+#             x,y = gui.locateCenterOnScreen(mole,confidence=0.8)
+#             # The optional confidence keyword argument specifies the accuracy with which the function should locate the image on screen. This is helpful in case the function is not able to locate an image due to negligible pixel differences:
+#             gui.click(x/2,y/2)
+#             print("Mole hit")
+#         except gui.ImageNotFoundException:
+#             print("No mole found")
         
-sleep(3)
-click_button_mac(CONTINUE_BUTTON, "Continue")
-click_button_mac(START_BUTTON, "Start")
-while (1):
-    hit_the_mole()
-    sleep(0.1)
+# sleep(3)
+# click_button_mac(CONTINUE_BUTTON, "Continue")
+# click_button_mac(START_BUTTON, "Start")
+# while (1):
+#     hit_the_mole()
+#     sleep(0.1)
 
 
